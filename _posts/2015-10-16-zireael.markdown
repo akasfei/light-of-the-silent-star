@@ -1,0 +1,20 @@
+---
+layout: default
+title:  "Zireael. Swallow."
+date:   2015-10-16 00:30
+sol: 28
+cover: "/dist/images/20151016-zireael.jpg"
+---
+You, are
+
+the flash that
+
+Cuts through
+
+Darkness,
+
+the light that
+
+Breaks the
+
+Night.
