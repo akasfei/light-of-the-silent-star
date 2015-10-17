@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="shiverview"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Light of the Silent Star</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- For Google bots -->
+    <meta name="fragment" content="!">
+
+    <link href="{{ "/dist/css/main.min.css" | prepend: site.baseurl }}" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="icon" href="{{ "/dist/images/icons/favicon.png" | prepend: site.baseurl }}">
+    <link rel="shortcut icon" href="{{ "/dist/images/icons/favicon.png" | prepend: site.baseurl }}">
+    <meta name="msapplication-TileColor" content="#292e33">
+    <meta name="msapplication-TileImage" content="{{ "/dist/images/icons/favicon-144.png" | prepend: site.baseurl }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ "/dist/images/icons/favicon-152.png" | prepend: site.baseurl }}">
+
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+
+{{ content }}
+
+    <!--[if lt IE 9]>
+    <script src="{{ "/dist/components/es5-shim/es5-shim.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/dist/components/json3/lib/json3.min.js" | prepend: site.baseurl }}"></script>
+    <![endif]-->
+
+    <script src="{{ "/dist/vendor/jquery/dist/jquery.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/dist/vendor/bootstrap/dist/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/dist/js/application.min.js" | prepend: site.baseurl }}"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51303179-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>

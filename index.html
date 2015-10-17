@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<div id="main" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+  <ol class="carousel-indicators">
+    <li data-target="#main" data-slide-to="0" class="active"></li>
+    {% for post in site.posts %}
+    <li data-target="#main" data-slide-to="{{ forloop.index }}"></li>
+    {% endfor %}
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active" style="background-image:url('{{"/dist/images/monument-valley-htwwbn.jpg" | prepend: site.baseurl}}');background-position: right center">
+      <div class="front">
+        <div class="border-pointy top"></div>
+        <div class="border-pointy bottom"></div>
+        <span class="border-corner top-left"></span>
+        <span class="border-corner top-right"></span>
+        <span class="border-corner bottom-left"></span>
+        <span class="border-corner bottom-right"></span>
+        <h1 class="title">LIGHT<br>OF THE<br>SILENT<br>STAR</h1>
+        <h2 class="sols">Sol <span id="current-sol" class="sols-int">∞</span><span id="current-sol-dec" class="sols-decimal"></span></h2>
+      </div>
+    </div>
+    {% for post in site.posts %}
+    <div class="item" style="background-image:url('{{post.cover | prepend: site.baseurl}}');">
+      <div class="front">
+        <div class="border-pointy top"></div>
+        <div class="border-pointy bottom"></div>
+        <span class="border-corner top-left"></span>
+        <span class="border-corner top-right"></span>
+        <span class="border-corner bottom-left"></span>
+        <span class="border-corner bottom-right"></span>
+        <h1 class="title">{{ post.title }}</h1>
+        <h2 class="sols">Sol <span class="sols-int">{{ post.sol }}</span></h2>
+        <a href class="open-content"><span class="glyphicon glyphicon-hourglass"></span></a>
+      </div>
+      <div class="post-content-overlay">
+        <div class="post-content">
+          <div class="border-pointy top"></div>
+          <div class="border-pointy bottom"></div>
+          <span class="border-corner top-left"></span>
+          <span class="border-corner top-right"></span>
+          <span class="border-corner bottom-left"></span>
+          <span class="border-corner bottom-right"></span>
+          {{ post.content }}
+          <a href class="close-content"><span class="glyphicon glyphicon-menu-down"></span><br>CLOSE</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a class="left carousel-control" href="#main" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#main" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

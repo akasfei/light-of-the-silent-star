@@ -1,0 +1,374 @@
+@import "font.less";
+@import "variables.less";
+@import "layout.less";
+@import "animation.less";
+@import "shadow.less";
+@import "ngprogress.less";
+@import "card.less";
+@import "file-util.less";
+@import "alert.less";
+@import "drawer.less";
+@import "users.less";
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+img.fit {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.splash-img {
+  width: 240px;
+  height: 240px;
+}
+
+.nav.navbar-nav > li.active {
+  border-bottom: 5px solid darken(@brand-primary, 5%);
+  & > a {
+    padding-bottom: 10px;
+  }
+}
+
+// Bootstrap
+//
+// ------------------------------------
+
+// Core variables and mixins
+// Using custom variables
+@import "../static/components/bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "../static/components/bootstrap/less/normalize.less";
+@import "../static/components/bootstrap/less/print.less";
+@import "../static/components/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "../static/components/bootstrap/less/scaffolding.less";
+@import "../static/components/bootstrap/less/type.less";
+@import "../static/components/bootstrap/less/code.less";
+@import "../static/components/bootstrap/less/grid.less";
+@import "../static/components/bootstrap/less/tables.less";
+@import "../static/components/bootstrap/less/forms.less";
+@import "../static/components/bootstrap/less/buttons.less";
+
+// Components
+@import "../static/components/bootstrap/less/component-animations.less";
+@import "../static/components/bootstrap/less/dropdowns.less";
+@import "../static/components/bootstrap/less/button-groups.less";
+@import "../static/components/bootstrap/less/input-groups.less";
+@import "../static/components/bootstrap/less/navs.less";
+@import "../static/components/bootstrap/less/navbar.less";
+@import "../static/components/bootstrap/less/breadcrumbs.less";
+@import "../static/components/bootstrap/less/pagination.less";
+@import "../static/components/bootstrap/less/pager.less";
+@import "../static/components/bootstrap/less/labels.less";
+@import "../static/components/bootstrap/less/badges.less";
+@import "../static/components/bootstrap/less/jumbotron.less";
+@import "../static/components/bootstrap/less/thumbnails.less";
+@import "../static/components/bootstrap/less/alerts.less";
+@import "../static/components/bootstrap/less/progress-bars.less";
+@import "../static/components/bootstrap/less/media.less";
+@import "../static/components/bootstrap/less/list-group.less";
+@import "../static/components/bootstrap/less/panels.less";
+@import "../static/components/bootstrap/less/responsive-embed.less";
+@import "../static/components/bootstrap/less/wells.less";
+@import "../static/components/bootstrap/less/close.less";
+
+// Components w/ JavaScript
+@import "../static/components/bootstrap/less/modals.less";
+@import "../static/components/bootstrap/less/tooltip.less";
+@import "../static/components/bootstrap/less/popovers.less";
+@import "../static/components/bootstrap/less/carousel.less";
+
+// Utility classes
+@import "../static/components/bootstrap/less/utilities.less";
+@import "../static/components/bootstrap/less/responsive-utilities.less";
+
+.label {
+  border-radius: 0;
+}
+
+.has-success .form-control {
+  &:focus {
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px @state-success-border;
+    .box-shadow(@shadow);
+  }
+}
+
+.has-warning .form-control {
+  &:focus {
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px @state-warning-border;
+    .box-shadow(@shadow);
+  }
+}
+
+.has-error .form-control {
+  &:focus {
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px @state-danger-border;
+    .box-shadow(@shadow);
+  }
+}
+
+#main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.item {
+  position: relative;
+  margin: 0;
+  padding: 24px;
+  height: 100%;
+  width: 100%; /* needed for Firefox */
+
+  color: #fff;
+  text-align: center;
+  font-weight: lighter;
+  background-size:cover;
+  background-position: center center;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.carousel-control > .glyphicon {
+  position: absolute;
+  top: 50%;
+  margin-left: -10px;
+  z-index: 5;
+}
+
+@small-border-width: 42px;
+
+.front {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 24px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  .transition(padding 0.25s @ease-in);
+  & > a {
+    color: #fff;
+    font-size: 18px;
+  }
+  .border-pointy {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: @small-border-width;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/small-pointy.svg') no-repeat 50% 1px;
+    &.top {
+      bottom: 100%;
+    }
+    &.bottom {
+      top: 100%;
+      .rotate(180deg);
+    }
+    &::before, &::after {
+      background: data-uri('image/svg+xml;base64','../static/images/borders/small-fill-h.svg') repeat 0 1px;
+    }
+    &::before {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      width: 50%;
+      height: @small-border-width;
+    }
+    &::after {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      right: -30px;
+      width: 50%;
+      height: @small-border-width;
+    }
+  }
+  &::before, &::after {
+    background: data-uri('image/svg+xml;base64','../static/images/borders/small-fill-v.svg') repeat -1px 0;
+  }
+  &::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: @small-border-width;
+    height: 100%;
+    .rotate(180deg);
+  }
+  &::after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: @small-border-width;
+    height: 100%;
+  }
+  .border-corner {
+    display: inline-block;
+    position: absolute;
+    width: @small-border-width;
+    height: @small-border-width;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/small-corner.svg') no-repeat;
+    margin: -1px;
+    &.top-left { bottom: 100%; right: 100%; .rotate(270deg); }
+    &.top-right { bottom: 100%; left: 100%; }
+    &.bottom-left { top: 100%; right: 100%; .rotate(180deg); }
+    &.bottom-right { top: 100%; left: 100%; .rotate(90deg); }
+  }
+}
+
+.post-content-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.post-content {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 24px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  .transition(padding 0.25s @ease-in);
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 300;
+  & > a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  @large-border-width: 82px;
+  .border-pointy {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: @large-border-width;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-pointy.svg') no-repeat 50% 1px;
+    &.top {
+      bottom: 100%;
+    }
+    &.bottom {
+      top: 100%;
+      .rotate(180deg);
+    }
+    &::before, &::after {
+      background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-h.svg') repeat 0 1px;
+    }
+    &::before {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      left: -60px;
+      width: 50%;
+      height: @large-border-width;
+    }
+    &::after {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      right: -60px;
+      width: 50%;
+      height: @large-border-width;
+    }
+  }
+  &::before, &::after {
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-v.svg') repeat -1px 0;
+  }
+  &::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: @large-border-width;
+    height: 100%;
+    .rotate(180deg);
+  }
+  &::after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: @large-border-width;
+    height: 100%;
+  }
+  .border-corner {
+    display: inline-block;
+    position: absolute;
+    width: @large-border-width;
+    height: @large-border-width;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-corner.svg') no-repeat -1px 1px;
+    &.top-left { bottom: 100%; right: 100%; .rotate(270deg); }
+    &.top-right { bottom: 100%; left: 100%; }
+    &.bottom-left { top: 100%; right: 100%; .rotate(180deg); }
+    &.bottom-right { top: 100%; left: 100%; .rotate(90deg); }
+  }
+}
+
+.title {
+  font-size: 96px;
+  font-weight: 200;
+  text-transform: uppercase;
+  .transition(font-size 0.25s @ease-in);
+}
+
+.sols {
+  position: relative;
+  font-weight: 200;
+  .transition(font-size 0.25s @ease-in);
+}
+
+.sols-int {
+  font-weight: bold;
+}
+
+.sols-decimal {
+  position: absolute;
+  bottom: 16px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+@media (max-width: @screen-xs-max) {
+  .front { padding: 8px; }
+  .title { font-size: 48px; }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .front { padding: 18px; }
+  .title { font-size: 80px; }
+}

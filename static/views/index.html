@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{message}}</h1>
+    <p>{{date}}</p>
+  </div>
+</div>
+<div class="container">
+  <h1>Hello.</h1>
+  <button class="btn btn-primary">Hello</button>
+  <button class="btn btn-success" ng-click="broadcast('successMessage', 'Hello, Success!')">Hello</button>
+  <button class="btn btn-info" ng-click="broadcast('infoMessage', 'Hi, Information!')">Hello</button>
+  <button class="btn btn-warning" ng-click="broadcast('warningMessage', 'Oh, Warning!')">Hello</button>
+  <button class="btn btn-danger" ng-click="broadcast('errorMessage', 'Oops, Error!')">Hello</button>
+</div>

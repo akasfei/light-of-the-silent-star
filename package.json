@@ -1,0 +1,42 @@
+{
+  "name": "shiverview-core-ui",
+  "version": "0.3.0",
+  "description": "Basic ui framework for project Shiverview",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssiops/shiverview-core-ui.git"
+  },
+  "author": {
+    "name": "akasfei"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssiops/shiverview-core-ui/issues"
+  },
+  "homepage": "https://github.com/ssiops/shiverview-core-ui",
+  "dependencies": {
+    "async": "^1.4.2",
+    "bower": "^1.5.2",
+    "less": "^2.5.1",
+    "q": "^1.4.1",
+    "request": "^2.61.0",
+    "uglify-js": "^2.4.24",
+    "wiredep": "^2.2.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-wiredep": "^2.0.0"
+  }
+}

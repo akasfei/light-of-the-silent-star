@@ -1,0 +1,14 @@
+# Site settings
+title: "Light of the Silent Star"
+email: super-ops@ssiops.org
+baseurl: "/light-of-the-silent-star"
+twitter_username: akasfei
+github_username:  akasfei
+contact: SierraSix
+
+# Build settings
+markdown: kramdown
+highlighter: rogue
+
+exclude:
+  - "node_modules"

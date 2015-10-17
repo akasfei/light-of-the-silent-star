@@ -1,0 +1,25 @@
+#message-toast {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1001;
+
+  .toast-container {
+    opacity: 1;
+    -webkit-transition: opacity @ease-in 0.1s;
+            transition: opacity @ease-in 0.1s;
+    &.ng-hide {
+      opacity: 0;
+    }
+    > .alert {
+      display: inline-block;
+      font-weight: 600;
+      & > .toast-dismiss
+      {
+        font-weight: bold;
+      }
+    }
+  }
+}
