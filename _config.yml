@@ -8,7 +8,7 @@ contact: SierraSix
 
 # Build settings
 markdown: kramdown
-highlighter: rogue
+highlighter: pygments
 
 exclude:
   - "node_modules"
