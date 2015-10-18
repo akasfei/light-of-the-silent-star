@@ -4,15 +4,28 @@
     $('#current-sol').text(parseInt((Date.now() - base.getTime()) / (1000 * 60 * 60 * 24)));
     $('#current-sol-dec').text('.' + ('0000'+parseInt((Date.now() - base.getTime()) % (1000 * 60 * 60 * 24) / (6 * 60 * 24))).slice(-4));
   };
+  var posts;
+  var fixOffset = function (i) {
+    var h = $(posts[i]).height();
+    $(posts[i]).removeClass('fix-offset');
+    if (window.innerHeight % 4 != h  % 4 && (window.innerHeight + 1) % 4 != h  % 4)
+      $(posts[i]).addClass('fix-offset');
+  };
   $(document).ready(function () {
     updateSol();
-    setInterval(updateSol, 8640)
+    setInterval(updateSol, 8640);
+    posts = $('.post-content');
+  });
+  $(window).on('resize', function (e) {
+    fixOffset($('.post-indicator.active').attr('data-slide-to') - 1);
   });
   $('.open-content').on('click', function (e) {
     e.preventDefault();
     var $front = $(this).parents('.front');
     $front.fadeOut(300);
-    $front.siblings('.post-content-overlay').fadeIn();
+    $front.siblings('.post-content-overlay').fadeIn(function () {
+      fixOffset($('.post-indicator.active').attr('data-slide-to') - 1);
+    });
   });
   $('.close-content').on('click', function (e) {
     e.preventDefault();

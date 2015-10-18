@@ -250,24 +250,30 @@ img.fit {
 }
 
 .post-content {
-  display: inline-block;
+  display: table;
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 24px;
+  padding: 0;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  .transition(padding 0.25s @ease-in);
-  font-size: 28px;
-  line-height: 32px;
-  font-weight: 300;
-  & > a {
-    display: inline-block;
-    margin-top: 18px;
-    color: #fff;
-    font-size: 18px;
-    line-height: 20px;
+  .transition(padding font-size 0.25s @ease-in);
+  &.fix-offset {
+    padding: 1px;
+  }
+  & > .post-content-body {
+    padding: 24px;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 300;
+    & > a {
+      display: inline-block;
+      margin-top: 18px;
+      color: #fff;
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
   @large-border-width: 82px;
   .border-pointy {
@@ -276,7 +282,7 @@ img.fit {
     left: 0;
     width: 100%;
     height: @large-border-width;
-    background: data-uri('image/svg+xml;base64','../static/images/borders/large-pointy.svg') no-repeat 50% 1px;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-pointy.svg') no-repeat 50%;
     &.top {
       bottom: 100%;
     }
@@ -285,7 +291,7 @@ img.fit {
       .rotate(180deg);
     }
     &::before, &::after {
-      background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-h.svg') repeat 0 1px;
+      background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-h.svg') repeat;
     }
     &::before {
       content: " ";
@@ -305,7 +311,7 @@ img.fit {
     }
   }
   &::before, &::after {
-    background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-v.svg') repeat -1px 0;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-fill-v.svg') repeat;
   }
   &::before {
     content: " ";
@@ -331,7 +337,7 @@ img.fit {
     position: absolute;
     width: @large-border-width;
     height: @large-border-width;
-    background: data-uri('image/svg+xml;base64','../static/images/borders/large-corner.svg') no-repeat -1px 1px;
+    background: data-uri('image/svg+xml;base64','../static/images/borders/large-corner.svg') no-repeat;
     &.top-left { bottom: 100%; right: 100%; .rotate(270deg); }
     &.top-right { bottom: 100%; left: 100%; }
     &.bottom-left { top: 100%; right: 100%; .rotate(180deg); }
@@ -366,9 +372,11 @@ img.fit {
 @media (max-width: @screen-xs-max) {
   .front { padding: 8px; }
   .title { font-size: 48px; }
+  .post-content>.post-content-body { font-size: 18px; line-height: 20px; padding: 4px; }
 }
 
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
   .front { padding: 18px; }
   .title { font-size: 80px; }
+  .post-content>.post-content-body { font-size: 24px; line-height: 28px; padding: 12px; }
 }

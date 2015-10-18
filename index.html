@@ -6,7 +6,7 @@ layout: default
   <ol class="carousel-indicators">
     <li data-target="#main" data-slide-to="0" class="active"></li>
     {% for post in site.posts %}
-    <li data-target="#main" data-slide-to="{{ forloop.index }}"></li>
+    <li class="post-indicator" data-target="#main" data-slide-to="{{ forloop.index }}"></li>
     {% endfor %}
   </ol>
   <div class="carousel-inner">
@@ -43,8 +43,10 @@ layout: default
           <span class="border-corner top-right"></span>
           <span class="border-corner bottom-left"></span>
           <span class="border-corner bottom-right"></span>
-          {{ post.content }}
-          <a href class="close-content"><span class="glyphicon glyphicon-menu-down"></span><br>CLOSE</a>
+          <div class="post-content-body">
+            {{ post.content }}
+            <a href class="close-content"><span class="glyphicon glyphicon-menu-down"></span><br>CLOSE</a>
+          </div>
         </div>
       </div>
     </div>
