@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "The Light That Breaks the Night"
 date:   2015-10-17 08:01
 sol: 30

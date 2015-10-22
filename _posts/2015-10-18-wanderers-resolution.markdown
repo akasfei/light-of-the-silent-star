@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "Wanderers' Resolution"
 date:   2015-10-18 20:05
 sol: 31

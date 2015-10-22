@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "The Distant Lands"
 date:   2015-09-27 09:30:00
 sol: 10

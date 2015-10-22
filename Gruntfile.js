@@ -89,14 +89,14 @@ module.exports = function(grunt) {
 
     wiredep: {
       dist: {
-        src: ['./static/index.html'],
+        src: ['./_layouts/default.html'],
         options: {
           cwd: '',
           dependencies: true,
           devDependencies: false,
           exclude: ['es5-shim', 'json3', 'bootstrap.js', 'jquery'],
           fileTypes: {},
-          ignorePath: '',
+          ignorePath: '../',
           overrides: {}
         }
       }

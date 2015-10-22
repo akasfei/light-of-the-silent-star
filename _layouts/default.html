@@ -22,18 +22,65 @@
 
     <!-- Place anything custom after this. -->
   </head>
-  <body>
+  <body ng-controller="bodyCtrl">
+    <div class="ngProgress" ng-controller="progressCtrl"></div>
+    {% raw %}
+    <div class="controls">
+      <button class="prev" ng-click="go(-1)" ng-disabled="index < 0"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button>
+      <rzslider id="slider" class="slider" rz-slider-model="selectedSol" rz-slider-floor="-1" rz-slider-ceil="sol" rz-slider-always-show-bar="true" rz-slider-translate="sliderTranslate" rz-slider-on-end="go()"></rzslider>
+      <button href class="next" ng-click="go(1)" ng-disabled="index >= archive.length - 1"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+    </div>
+    {% endraw %}
 
-{{ content }}
+    <div class="view-animate-container">
+      <div ng-view class="view-animate"></div>
+    </div>
 
     <!--[if lt IE 9]>
-    <script src="{{ "/dist/components/es5-shim/es5-shim.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/dist/components/json3/lib/json3.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/components/es5-shim/es5-shim.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/components/json3/lib/json3.min.js" | prepend: site.baseurl }}"></script>
     <![endif]-->
 
-    <script src="{{ "/dist/vendor/jquery/dist/jquery.min.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/dist/vendor/bootstrap/dist/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/dist/js/application.min.js" | prepend: site.baseurl }}"></script>
+    <!-- bower:js -->
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-animate/angular-animate.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <script src="components/angular-touch/angular-touch.js"></script>
+    <script src="components/ngprogress/build/ngProgress.js"></script>
+    <script src="components/angularjs-slider/dist/rzslider.js"></script>
+    <!-- endbower -->
+
+    <script>
+      (function (angular) {
+        var sv = document.sv = angular.module('shiverview', /*<!-- Ng Mod Inject*/['ui.bootstrap', 'ngProgress', 'ngAnimate', 'ngRoute', 'ngTouch', 'rzModule']/*--!>*/);
+        sv.config(['$routeProvider', function ($routeProvider) {
+          $routeProvider.when('/', {
+            templateUrl: 'static/index.html',
+            controller: 'viewCtrl'
+          })
+          {% for post in site.posts %}
+          .when('/{{post.sol}}', {
+            templateUrl: '{{ post.url | prepend: site.baseurl }}',
+            controller: 'viewCtrl'
+          })
+          {% endfor %}
+          /*<!-- Ng Route Inject --!>*/
+          .otherwise('/');
+        }]);
+        sv.factory('archive', function ($rootScope) {
+          return [
+            {% for post in site.posts %}
+            {
+              title: "{{post.title}}",
+              sol: {{post.sol}}
+            },
+            {% endfor %}
+          ];
+        });
+      })(window.angular);
+
+    </script>
+    <script src="{{ "/dist/js/controllers.js" | prepend: site.baseurl }}"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

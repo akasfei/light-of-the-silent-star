@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "Freedom to Decide"
 date:   2015-10-03 09:00:00
 sol: 16

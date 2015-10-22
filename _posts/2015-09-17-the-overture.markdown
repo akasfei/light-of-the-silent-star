@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "The Overture"
 date:   2015-09-17 08:00:00
 sol: 0

@@ -10,7 +10,7 @@
 @import "drawer.less";
 @import "users.less";
 
-body {
+html, body, .view-animate-container {
   width: 100%;
   height: 100%;
 }
@@ -38,54 +38,54 @@ img.fit {
 
 // Core variables and mixins
 // Using custom variables
-@import "../static/components/bootstrap/less/mixins.less";
+@import "../components/bootstrap/less/mixins.less";
 
 // Reset and dependencies
-@import "../static/components/bootstrap/less/normalize.less";
-@import "../static/components/bootstrap/less/print.less";
-@import "../static/components/bootstrap/less/glyphicons.less";
+@import "../components/bootstrap/less/normalize.less";
+@import "../components/bootstrap/less/print.less";
+@import "../components/bootstrap/less/glyphicons.less";
 
 // Core CSS
-@import "../static/components/bootstrap/less/scaffolding.less";
-@import "../static/components/bootstrap/less/type.less";
-@import "../static/components/bootstrap/less/code.less";
-@import "../static/components/bootstrap/less/grid.less";
-@import "../static/components/bootstrap/less/tables.less";
-@import "../static/components/bootstrap/less/forms.less";
-@import "../static/components/bootstrap/less/buttons.less";
+@import "../components/bootstrap/less/scaffolding.less";
+@import "../components/bootstrap/less/type.less";
+@import "../components/bootstrap/less/code.less";
+@import "../components/bootstrap/less/grid.less";
+@import "../components/bootstrap/less/tables.less";
+@import "../components/bootstrap/less/forms.less";
+@import "../components/bootstrap/less/buttons.less";
 
 // Components
-@import "../static/components/bootstrap/less/component-animations.less";
-@import "../static/components/bootstrap/less/dropdowns.less";
-@import "../static/components/bootstrap/less/button-groups.less";
-@import "../static/components/bootstrap/less/input-groups.less";
-@import "../static/components/bootstrap/less/navs.less";
-@import "../static/components/bootstrap/less/navbar.less";
-@import "../static/components/bootstrap/less/breadcrumbs.less";
-@import "../static/components/bootstrap/less/pagination.less";
-@import "../static/components/bootstrap/less/pager.less";
-@import "../static/components/bootstrap/less/labels.less";
-@import "../static/components/bootstrap/less/badges.less";
-@import "../static/components/bootstrap/less/jumbotron.less";
-@import "../static/components/bootstrap/less/thumbnails.less";
-@import "../static/components/bootstrap/less/alerts.less";
-@import "../static/components/bootstrap/less/progress-bars.less";
-@import "../static/components/bootstrap/less/media.less";
-@import "../static/components/bootstrap/less/list-group.less";
-@import "../static/components/bootstrap/less/panels.less";
-@import "../static/components/bootstrap/less/responsive-embed.less";
-@import "../static/components/bootstrap/less/wells.less";
-@import "../static/components/bootstrap/less/close.less";
+@import "../components/bootstrap/less/component-animations.less";
+@import "../components/bootstrap/less/dropdowns.less";
+@import "../components/bootstrap/less/button-groups.less";
+@import "../components/bootstrap/less/input-groups.less";
+@import "../components/bootstrap/less/navs.less";
+@import "../components/bootstrap/less/navbar.less";
+@import "../components/bootstrap/less/breadcrumbs.less";
+@import "../components/bootstrap/less/pagination.less";
+@import "../components/bootstrap/less/pager.less";
+@import "../components/bootstrap/less/labels.less";
+@import "../components/bootstrap/less/badges.less";
+@import "../components/bootstrap/less/jumbotron.less";
+@import "../components/bootstrap/less/thumbnails.less";
+@import "../components/bootstrap/less/alerts.less";
+@import "../components/bootstrap/less/progress-bars.less";
+@import "../components/bootstrap/less/media.less";
+@import "../components/bootstrap/less/list-group.less";
+@import "../components/bootstrap/less/panels.less";
+@import "../components/bootstrap/less/responsive-embed.less";
+@import "../components/bootstrap/less/wells.less";
+@import "../components/bootstrap/less/close.less";
 
 // Components w/ JavaScript
-@import "../static/components/bootstrap/less/modals.less";
-@import "../static/components/bootstrap/less/tooltip.less";
-@import "../static/components/bootstrap/less/popovers.less";
-@import "../static/components/bootstrap/less/carousel.less";
+@import "../components/bootstrap/less/modals.less";
+@import "../components/bootstrap/less/tooltip.less";
+@import "../components/bootstrap/less/popovers.less";
+@import "../components/bootstrap/less/carousel.less";
 
 // Utility classes
-@import "../static/components/bootstrap/less/utilities.less";
-@import "../static/components/bootstrap/less/responsive-utilities.less";
+@import "../components/bootstrap/less/utilities.less";
+@import "../components/bootstrap/less/responsive-utilities.less";
 
 .label {
   border-radius: 0;
@@ -140,11 +140,90 @@ img.fit {
   transform-style: preserve-3d;
 }
 
-.carousel-control > .glyphicon {
+@import (less) "../components/angularjs-slider/dist/rzslider.css";
+
+#slider {
   position: absolute;
-  top: 50%;
-  margin-left: -10px;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  width: 50%;
+  min-width: @screen-xs-max * 0.5;
+  margin: 0 auto;
   z-index: 5;
+  .opacity(0.4);
+  .transition(opacity 0.25s @ease-in);
+  &:hover {
+    .opacity(0.9);
+  }
+  span.rz-bar {
+    background-color: #fff;
+    .opacity(0.4);
+    &.rz-selection {
+      .opacity(0.6);
+    }
+  }
+  span.rz-pointer {
+    background-color: transparent;
+    background-image: data-uri('image/svg+xml;base64','../static/images/borders/slider-diamond.svg');
+    background-repeat: no-repeat;
+    &::after {
+      background-color: #fff;
+      border-radius: 0;
+    }
+    &:hover {
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+  span.rz-bubble {
+    bottom: 24px;
+    padding: 4px 8px;
+    color: #fff;
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0.1);
+    &.rz-limit {
+      padding: 2px 4px;
+      border: none;
+      bottom: 16px;
+      .opacity(0.5);
+    }
+  }
+}
+
+.controls > button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 10%;
+  font-size: 20px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  z-index: 5;
+  .opacity(0.5);
+  .transition(opacity 0.25s @ease-in);
+  &.next {
+    left: auto;
+    right: 0;
+  }
+  & > .glyphicon {
+    position: absolute;
+    top: 50%;
+    margin-left: -10px;
+  }
+  &:hover {
+    .opacity(0.75);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    .opacity(0.25);
+  }
 }
 
 @small-border-width: 42px;
@@ -158,10 +237,18 @@ img.fit {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  opacity: 1;
   .transition(padding 0.25s @ease-in);
   & > a {
     color: #fff;
     font-size: 18px;
+  }
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    .transition(opacity 0.4s @ease-in);
+  }
+  &.ng-hide {
+    opacity: 0;
   }
   .border-pointy {
     position: absolute;
@@ -234,7 +321,6 @@ img.fit {
 }
 
 .post-content-overlay {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -243,10 +329,19 @@ img.fit {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, .5);
+  opacity: 1;
 
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
+  &.ng-hide-add,
+  &.ng-hide-remove {
+    .transition(opacity 0.4s @ease-in);
+  }
+  &.ng-hide {
+    opacity: 0;
+  }
 }
 
 .post-content {
@@ -373,6 +468,7 @@ img.fit {
   .front { padding: 8px; }
   .title { font-size: 48px; }
   .post-content>.post-content-body { font-size: 18px; line-height: 20px; padding: 4px; }
+  #slider { width: 100%; max-width: auto; }
 }
 
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {

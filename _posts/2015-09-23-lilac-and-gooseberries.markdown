@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "Lilac and Gooseberries"
 date:   2015-09-23 08:20:00
 sol: 6

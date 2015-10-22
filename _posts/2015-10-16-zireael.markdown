@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "Zireael. Swallow."
 date:   2015-10-16 00:30
 sol: 28

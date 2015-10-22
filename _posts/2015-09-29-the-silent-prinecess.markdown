@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "The Silent Princess"
 date:   2015-09-29 23:30:00
 sol: 12

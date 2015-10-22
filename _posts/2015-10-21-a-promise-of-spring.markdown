@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: view
 title:  "A Promise of Spring"
 date:   2015-10-21 10:00
 sol: 34

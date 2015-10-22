@@ -1,0 +1,29 @@
+<div id="main" class="">
+  <div class="item" style="background-image:url('{{page.cover | prepend: site.baseurl}}');">
+    <div class="front" ng-hide="showContent">
+      <div class="border-pointy top"></div>
+      <div class="border-pointy bottom"></div>
+      <span class="border-corner top-left"></span>
+      <span class="border-corner top-right"></span>
+      <span class="border-corner bottom-left"></span>
+      <span class="border-corner bottom-right"></span>
+      <h1 class="title">{{ page.title }}</h1>
+      <h2 class="sols">Sol <span class="sols-int">{{ page.sol }}</span></h2>
+      <a href class="open-content" ng-click="showContent=!showContent;fixOffset()"><span class="glyphicon glyphicon-hourglass"></span></a>
+    </div>
+    <div class="post-content-overlay" ng-show="showContent">
+      <div id="content" class="post-content" ng-class="{'fix-offset': fix}">
+        <div class="border-pointy top"></div>
+        <div class="border-pointy bottom"></div>
+        <span class="border-corner top-left"></span>
+        <span class="border-corner top-right"></span>
+        <span class="border-corner bottom-left"></span>
+        <span class="border-corner bottom-right"></span>
+        <div class="post-content-body">
+          {{ content }}
+          <a href class="close-content" ng-click="showContent=!showContent"><span class="glyphicon glyphicon-menu-down"></span><br>CLOSE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
