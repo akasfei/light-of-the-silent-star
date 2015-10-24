@@ -27,7 +27,7 @@
     {% raw %}
     <div class="controls">
       <button class="prev" ng-click="go(-1)" ng-disabled="index < 0"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></button>
-      <rzslider id="slider" class="slider" rz-slider-model="selectedSol" rz-slider-floor="-1" rz-slider-ceil="sol" rz-slider-always-show-bar="true" rz-slider-translate="sliderTranslate" rz-slider-on-end="go()"></rzslider>
+      <rzslider id="slider" class="slider" ng-class="{'active': sliderActive}" rz-slider-model="selectedSol" rz-slider-floor="-1" rz-slider-ceil="sol" rz-slider-always-show-bar="true" rz-slider-translate="sliderTranslate" rz-slider-on-start="sliderActive=true" rz-slider-on-end="go();sliderActive=false"></rzslider>
       <button href class="next" ng-click="go(1)" ng-disabled="index >= archive.length - 1"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
     </div>
     {% endraw %}
