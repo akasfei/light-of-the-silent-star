@@ -2,7 +2,7 @@
 layout: view
 title:  "A Head Full of Dreams"
 date:   2015-12-09 08:00
-sol: 93
+sol: 83
 cover: "/dist/images/20151209-a-head-full-of-dreams.jpg"
 ---
 I sing, oh, I think I've landed
