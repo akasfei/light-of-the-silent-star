@@ -1,9 +1,9 @@
 ---
 layout: view
-title:  "Young and Beautiful "
-date:   2016-04-19 14:22
+title:  "Young and Beautiful"
+date:   2016-04-18 23：22
 sol: 214
-cover: "/dist/images/20160315-pilgrims-on-a-long-journey.jpg"
+cover: "/dist/images/20160419-young-and-beautiful.jpg"
 ---
 Time stood still for a while
 
