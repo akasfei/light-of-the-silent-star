@@ -5,18 +5,20 @@ date:   2016-04-18 23：22
 sol: 214
 cover: "/dist/images/20160419-young-and-beautiful.jpg"
 ---
-Time stood still for a while
+Hot summer nights mid July
 
-Your hand was holding mine
+When you and I were forever wild
 
-The stars that shined in your eyes
+The crazy days, the city lights
 
-Don't let them go by
+The way you'd play with me like a child
 
-Fly on you golden girl
+Will you still love me
 
-And take on your fears
+when I'm no longer young and beautiful
 
-I'll be with you in your dreams
+Will you still love me
 
-The world is darker than it seems
+when I got nothing but my aching soul
+
+I know you will, I know you will
