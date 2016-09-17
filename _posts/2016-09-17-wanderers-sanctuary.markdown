@@ -13,7 +13,7 @@ He came to me with the sweetest smile
 
 Told me he wanted to talk for awhile
 
-He said, "Fifty Seven, that's what they call me
+She said, "Fifty Seven, that's what they call me
 
 I promise that you'll never be lonely"
 
