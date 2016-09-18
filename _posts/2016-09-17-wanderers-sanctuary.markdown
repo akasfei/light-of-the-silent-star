@@ -9,7 +9,7 @@ Then one night, as I closed my eyes
 
 I saw a shadow flying high
 
-He came to me with the sweetest smile
+She came to me with the sweetest smile
 
 Told me he wanted to talk for awhile
 
