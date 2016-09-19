@@ -11,7 +11,7 @@ I saw a shadow flying high
 
 She came to me with the sweetest smile
 
-Told me he wanted to talk for awhile
+Told me she wanted to talk for awhile
 
 She said, "Fifty Seven, that's what they call me
 
