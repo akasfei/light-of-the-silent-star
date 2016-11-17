@@ -11,7 +11,7 @@ Have faith they told me
 
 It was easier than in my younger years
 
-Now than I'm older, now that it's colder
+Now that I'm older, now that it's colder
 
 Life keeps on crashing
 
